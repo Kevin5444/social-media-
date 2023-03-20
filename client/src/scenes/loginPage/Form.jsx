@@ -78,6 +78,7 @@ const Form = () => {
     }
   };
 
+
   const login = async (values, onSubmitProps) => {
     const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
       method: "POST",
@@ -97,7 +98,7 @@ const Form = () => {
     }
   };
 
-  const handleFormSubmit = async (values, onSubmitProps) => {
+  const handleFormSubmit =  async (values, onSubmitProps) => {
     if (isLogin) await login(values, onSubmitProps);
     if (isRegister) await register(values, onSubmitProps);
   };
@@ -131,6 +132,7 @@ const Form = () => {
               <>
                 <TextField
                   label="First Name"
+                  autoComplete="firstName"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.firstName || ''}
@@ -143,6 +145,7 @@ const Form = () => {
                 />
                 <TextField
                   label="Last Name"
+                  autoComplete="lastName"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.lastName || ''}
@@ -153,6 +156,7 @@ const Form = () => {
                 />
                 <TextField
                   label="Location"
+                  autoComplete="location"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.location || ''}
@@ -163,6 +167,7 @@ const Form = () => {
                 />
                 <TextField
                   label="Occupation"
+                  autoComplete="occupation"
                   onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.occupation || ''}
@@ -213,6 +218,7 @@ const Form = () => {
               label="Email"
               onBlur={handleBlur}
               onChange={handleChange}
+              autoComplete="email"
               value={values.email || ''}
               name="email"
               error={Boolean(touched.email) && Boolean(errors.email)}
@@ -222,6 +228,7 @@ const Form = () => {
             <TextField
               label="Password"
               type="password"
+              autoComplete="current-password"
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.password || ''}
