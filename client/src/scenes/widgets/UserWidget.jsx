@@ -47,6 +47,8 @@ import {
       impressions,
       friends,
     } = user;
+
+    console.log(`friends ${friends}`)
   
     return (
       <WidgetWrapper>
@@ -72,7 +74,7 @@ import {
               >
                 {firstName} {lastName}
               </Typography>
-              <Typography color={medium}>{friends.length} friends</Typography>
+              <Typography color={medium}> {friends.length} friends</Typography>
             </Box>
           </FlexBetween>
           <ManageAccountsOutlined />
