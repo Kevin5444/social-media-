@@ -13,11 +13,9 @@ bcrypt - password encryption
 
 cors - cross origin request
 
-dotenv - enviroment variables
-
 gridfs-stream - for file uploads
 
-multer
+multer - file upload
 
 multer-gridfs-storage - upload files locally
 
